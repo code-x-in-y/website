@@ -1,14 +1,14 @@
-import React from 'react';
-import Head from 'next/head';
-import { MDXProvider } from '@mdx-js/react';
-import { Header } from './header';
+import React from 'react'
+import Head from 'next/head'
+import { MDXProvider } from '@mdx-js/react'
+import { Header } from './header'
 
-const components = {};
+const components = {}
 
 export default function Blog(props) {
-  const { meta, route, ...rest } = props;
+  const { meta, route, ...rest } = props
 
-  console.log(props);
+  console.log(props)
 
   const sharedHead = (
     <Head>
@@ -19,7 +19,7 @@ export default function Blog(props) {
       <meta name="twitter:site" content="@jaredpalmer" />
       <meta property="og:image" content={meta.og} />
     </Head>
-  );
+  )
 
   if (route.startsWith('/blog') || route.startsWith('/posts')) {
     return function Layout({ children }) {
@@ -31,8 +31,8 @@ export default function Blog(props) {
             <MDXProvider components={components}>{children}</MDXProvider>
           </div>
         </>
-      );
-    };
+      )
+    }
   }
 
   return function Layout({ children }) {
@@ -41,6 +41,6 @@ export default function Blog(props) {
         {sharedHead}
         {children}
       </>
-    );
-  };
+    )
+  }
 }

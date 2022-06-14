@@ -1,10 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-
 
 body {
   font-family: 'Space Mono', system-ui, -apple-system, BlinkMacSystemFont,
