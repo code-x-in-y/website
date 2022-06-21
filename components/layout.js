@@ -22,8 +22,7 @@ export default function Layout(props) {
   const { children, ...rest } = props
   const router = useRouter();
   const route = router.pathname;
-  console.log(props)
-
+  const {useHeader} = props;
   if (route.startsWith('/blog') || route.startsWith('/posts')) {
       return (
         <>
@@ -37,10 +36,10 @@ export default function Layout(props) {
       )
   }
 
-    console.log("regular");
     return (
       <>
         <Theme>
+        {useHeader && <Header/>}
         {children}
         </Theme>
       </>
@@ -48,8 +47,8 @@ export default function Layout(props) {
 }
 
 
-const withLayout = Component => (({...props}) => (
-  <Layout>
+const withLayout = (Component, config = {}) => (({...props}) => (
+  <Layout {...config}>
     <Component {...props}/>
   </Layout>
 ));

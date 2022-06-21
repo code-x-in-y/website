@@ -4,6 +4,11 @@ import Head from 'next/head'
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {
+    
+  const meta = {
+    title: "Code X in Y"
+  };
+
   return (
     <>
       <Head>
@@ -19,8 +24,9 @@ export default function App({ Component, pageProps }) {
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
-        />
-      </Head>
+        /> 
+          <title>{meta.title}</title>
+        </Head>
       <Component {...pageProps} />
     </>
   )

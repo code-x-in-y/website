@@ -22,7 +22,15 @@ function Home() {
             </div>
           </div>
           <div className="text-center flex flex-row justify-center gap-8">
-            <span>github</span> <span>projects</span> <span><Link href='/blog'>blog</Link></span>
+            <span className="hover:text-zinc-800">
+              github
+            </span>
+            <span className="hover:text-zinc-800">
+              <Link href="/projects">projects</Link>
+            </span>
+            <span className="hover:text-zinc-800">
+              <Link href='/blog'>blog</Link>
+            </span>
           </div>
         </div>
       </div>
@@ -31,7 +39,4 @@ function Home() {
 }
 
 const HomePage = withLayout(Home);
-//const HomePage = Home;
-
-console.log(HomePage);
 export default HomePage;
